@@ -1,0 +1,2 @@
+dataset_name,source_url,branch,local_path,file_count,licence,downloaded_on
+Valkey Source Code,https://github.com/valkey-io/valkey,unstable,data/raw/valkey/,2054,BSD-3-Clause (verify individual files and dependencies),2026-11-01
