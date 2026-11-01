@@ -6,8 +6,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    app_name: str = "examate-rag"
-    environment: str = "local"  # local | ci | production
+    app_name: str = "cachecompass"
+    environment: str = "local"
+
+    gemini_api_key: str
+    gemini_model: str = "gemini-3.5-flash"
 
 
 @lru_cache

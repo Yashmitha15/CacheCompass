@@ -20,3 +20,7 @@ logs/
 data/raw/
 *.sqlite
 .DS_Store
+
+data/index/
+data/index_backup/
+data/index_v2/
