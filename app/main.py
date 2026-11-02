@@ -1,3 +1,4 @@
+import logging
 from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException
@@ -5,6 +6,8 @@ from pydantic import BaseModel
 
 from app.config import Settings, get_settings
 from app.llm import ask_gemini
+
+logger = logging.getLogger("uvicorn.error")
 
 app = FastAPI(title="CacheCompass", version="0.1.0")
 
@@ -37,7 +40,8 @@ def ask(request: AskRequest) -> dict:
         }
 
     except Exception:
+        logger.exception("Exception occurred while processing /ask:")
         raise HTTPException(
             status_code=503,
             detail="AI service is temporarily unavailable. Please try again later.",
-        )
+        )

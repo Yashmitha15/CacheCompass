@@ -9,8 +9,17 @@ class Settings(BaseSettings):
     app_name: str = "cachecompass"
     environment: str = "local"
 
-    gemini_api_key: str
-    gemini_model: str = "gemini-3.5-flash"
+    gemini_api_key: str = ""
+    gemini_model: str = "gemini-2.0-flash"
+    gemini_fallback_model: str = "gemini-1.5-flash"
+
+    # Cost in USD per 1 million tokens (default: Gemini 2.0 Flash pricing).
+    gemini_input_cost_per_million: float = 0.075
+    gemini_output_cost_per_million: float = 0.30
+
+    # Vector store index paths.
+    index_dir: str = "data/index_v2"
+    fallback_index_dir: str = "data/index"
 
 
 @lru_cache
