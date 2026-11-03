@@ -24,17 +24,3 @@ data/raw/
 data/index/
 data/index_backup/
 data/index_v2/
-
-
-
-# .env
-# .venv/
-# __pycache__/
-# *.pyc
-# .pytest_cache/
-# .ruff_cache/
-# logs/
-# data/raw/
-# *.sqlite
-# .DS_Store
-# venv
