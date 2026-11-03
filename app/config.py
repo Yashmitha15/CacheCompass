@@ -1,3 +1,33 @@
+# from functools import lru_cache
+
+# from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+# class Settings(BaseSettings):
+#     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+#     app_name: str = "cachecompass"
+#     environment: str = "local"
+
+#     gemini_api_key: str = ""
+#     gemini_model: str = "gemini-3.8-flash"
+#     gemini_fallback_model: str = "gemini-1.5-flash"
+
+#     # Cost in USD per 1 million tokens (default: Gemini 2.0 Flash pricing).
+#     gemini_input_cost_per_million: float = 0.075
+#     gemini_output_cost_per_million: float = 0.30
+
+#     # Vector store index paths.
+#     index_dir: str = "data/index_v2"
+#     fallback_index_dir: str = "data/index"
+
+
+# @lru_cache
+# def get_settings() -> Settings:
+#     return Settings()
+
+
+
 from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -6,20 +36,20 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    app_name: str = "cachecompass"
-    environment: str = "local"
-
-    gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.0-flash"
-    gemini_fallback_model: str = "gemini-1.5-flash"
-
-    # Cost in USD per 1 million tokens (default: Gemini 2.0 Flash pricing).
-    gemini_input_cost_per_million: float = 0.075
-    gemini_output_cost_per_million: float = 0.30
-
-    # Vector store index paths.
-    index_dir: str = "data/index_v2"
-    fallback_index_dir: str = "data/index"
+    app_name: str = "examate-rag"
+    environment: str = "local"  # local | ci | production
+    llm_provider: str = "fake"
+    llm_base_url: str = "http://localhost:11434/v1"
+    llm_api_key: str = ""
+    llm_model: str = "examate-fake"
+    llm_fallback_model: str = ""
+    llm_fallback_base_url: str = ""
+    llm_fallback_api_key: str = ""
+    llm_timeout_seconds: float = 30.0
+    llm_max_retries: int = 3
+    price_input_per_million: float = 0.0
+    price_output_per_million: float = 0.0
+    cost_log_path: str = "logs/cost.jsonl"
 
 
 @lru_cache
