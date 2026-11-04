@@ -1,6 +1,7 @@
 """Polite downloader: python tools/download.py urls.txt
 urls.txt: one URL per line (lines starting with # are skipped).
 Saves files to data/raw/ and logs every file to data/manifest.csv."""
+
 import csv
 import hashlib
 import os
@@ -41,7 +42,6 @@ def name_for(url):
     return name.replace(" ", "_")
 
 
-
 def main(list_file):
     os.makedirs(RAW, exist_ok=True)
     new_manifest = not os.path.exists(MANIFEST)
@@ -80,13 +80,7 @@ def main(list_file):
 
             digest = hashlib.sha256(r.content).hexdigest()[:16]
 
-            log.writerow([
-                path,
-                url,
-                date.today().isoformat(),
-                len(r.content),
-                digest
-            ])
+            log.writerow([path, url, date.today().isoformat(), len(r.content), digest])
 
             print("saved", path, len(r.content), "bytes")
             time.sleep(DELAY)
