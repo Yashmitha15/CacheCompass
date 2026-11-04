@@ -6,15 +6,15 @@ Commit after every class. Tag every Friday: `git tag week-N && git push origin w
 - [x] Repo created from the Examate template and registered on the form
 - [x] README top section filled from my project card
 - [x] /health runs locally
-- [x ] docs/QUESTIONS.md: 10 real questions
-- [x ] 50+ pages collected, DATASET.md filled, sample in data/sample/
-- [x ] Tag week-1 pushed
+- [x] docs/QUESTIONS.md: 10 real questions
+- [x] 50+ pages collected, DATASET.md filled, sample in data/sample/
+- [x] Tag week-1 pushed
 
 ## Week 2 (tag week-2 by Fri 30 Oct)
-- [x ] POST /chat calls an LLM and returns structured JSON
-- [x ] Streaming, timeouts, retry and a fallback model
-- [ x] Cost log + GET /usage
-- [ x] Docker Compose (API + Postgres/pgvector) runs
+- [x] POST /chat calls an LLM and returns structured JSON
+- [x] Streaming, timeouts, retry and a fallback model
+- [x] Cost log + GET /usage
+- [x] Docker Compose (API + Postgres/pgvector) runs
 - [ ] CI green, live link in README
 - [ ] Tag week-2 pushed
 
