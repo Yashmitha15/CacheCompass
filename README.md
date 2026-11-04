@@ -1,4 +1,7 @@
 # CacheCompass
+[![CI](https://github.com/Yashmitha15/CacheCompass/actions/workflows/ci.yml/badge.svg)](https://github.com/Yashmitha15/CacheCompass/actions/workflows/ci.yml)
+
+*Live:* https://cachecompass.onrender.com/health · first request after 15 idle minutes takes about a minute (free tier)
 
 > AI-powered source-code research for Valkey, with verified answers and fair LLM quotas for every team.
 
